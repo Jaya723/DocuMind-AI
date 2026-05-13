@@ -1,5 +1,6 @@
 # Making the data ingestion pipeline for different types of documents like PDF, Text, CSV, and DOCX.
 from pathlib import Path
+from typing import List, Any
 from langchain_community.document_loaders import PyPDFLoader, TextLoader, CSVLoader, Docx2txtLoader
 
 LOADERS = {
@@ -10,7 +11,7 @@ LOADERS = {
 }
 
 
-def load_single_file(file_path: str):
+def load_single_file(file_path: str)->List[Any]:
     path = Path(file_path).resolve()
 
     if not path.exists():

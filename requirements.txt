@@ -3,22 +3,25 @@ langchain
 langchain-community
 langchain-huggingface
 
+#Langchain
+faiss-cpu
+pypdf
+langchain-groq
+sentence-transformers
+
+#Api
 fastapi
 uvicorn
 
+#Python
 python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
 
-
-
-faiss-cpu
-pypdf
-sentence-transformers
-
-
+#Database
 sqlalchemy
 mysql-connector-python
 
+#Frontend
 streamlit
 requests
