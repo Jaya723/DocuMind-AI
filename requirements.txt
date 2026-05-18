@@ -21,6 +21,7 @@ python-multipart
 #Database
 sqlalchemy
 mysql-connector-python
+email-validator
 
 #Frontend
 streamlit

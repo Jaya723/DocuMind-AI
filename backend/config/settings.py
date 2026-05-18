@@ -1,18 +1,11 @@
-from pydantic_settings import BaseSettings
-
-
+from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
-    """
-    All config lives here.
-    Values are read from a .env file automatically.
-    Never hardcode secrets — always use environment variables.
-    """
 
     # GROQ
     GROQ_API_KEY: str
 
     # MySQL
-    DB_HOST:     str = "localhost"
+    DB_HOST:     str = "127.0.0.1"
     DB_PORT:     int = 3306
     DB_USER:     str = "root"
     DB_PASSWORD: str
@@ -26,8 +19,9 @@ class Settings(BaseSettings):
     # App
     UPLOAD_DIR: str = "data/uploads"
 
-    class Config:
-        env_file = ".env"
-
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        extra="ignore"
+    )
 
 settings = Settings()
