@@ -7,7 +7,7 @@ from backend.routes.auth_routes import router as auth_router
 from backend.routes.upload_routes import router as upload_router
 from backend.routes.rag_routes import router as rag_router
 
-
+#Note: CORSMiddleware is configured to allow all origins for simplicity. In production, you should restrict this to specific domains for security reasons. And also the database initialization is done on startup, which is fine for development but in production, you might want to handle migrations separately.
 app = FastAPI(
     title="DocuMind AI",
     description="RAG-based context-aware document QA system",
